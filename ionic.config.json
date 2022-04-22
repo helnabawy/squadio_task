@@ -1,0 +1,7 @@
+{
+  "name": "squadio_task",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
