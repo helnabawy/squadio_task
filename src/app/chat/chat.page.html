@@ -1,9 +1,41 @@
-<ion-header>
+<ion-header class="base-header">
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-title class="chat-title">
+      <p>Familia</p>
+      <ion-text class="text-sm" color="medium">Ahmed, hag, Mona, ramy</ion-text>
+    </ion-title>
+    <ion-buttons>
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <section class="first-chat-message">
+    <div class="secondary">Today</div>
+    <div class="primary">You created group "Familia"</div>
+    <div class="warning">
+      <ion-icon color="dark" name="lock-closed"></ion-icon>
+      Messages to this group are now secured with end-to-end encryption. Tap for more info.
+    </div>
+  </section>
 </ion-content>
+
+<ion-footer>
+  <section class="chat-cta ion-align-items-center ion-padding-vertical">
+    <ion-button size="small" fill="clear">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+    <div class="input-holder ion-align-items-center">
+      <ion-input class="ion-no-padding"></ion-input>
+      <ion-icon name="document-outline" color="primary"></ion-icon>
+    </div>
+    <ion-button size="small" fill="clear">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button size="small" fill="clear">
+      <ion-icon name="mic-outline"></ion-icon>
+    </ion-button>
+  </section>
+</ion-footer>
