@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Contact} from '@capacitor-community/contacts';
+
 
 @Component({
   selector: 'app-contact-item',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() contact: Contact;
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
 
 }

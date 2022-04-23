@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "squadio_task",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Contact} from '@capacitor-community/contacts';
 
 @Component({
   selector: 'app-contact-preview',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-preview.component.scss'],
 })
 export class ContactPreviewComponent implements OnInit {
-
+  @Input() contact: Contact;
   constructor() { }
 
   ngOnInit() {}

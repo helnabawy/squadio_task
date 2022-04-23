@@ -2,6 +2,6 @@
   <div class="remove ion-align-items-center ion-justify-content-center">
     <ion-icon name="close" color="light"></ion-icon>
   </div>
-  <img alt="" src="../assets/avatar-placeholder.png">
-  <ion-label class="ion-padding-vertical text-sm text-bold">Squadio</ion-label>
+  <img alt="user avatar" [src]="contact.photoThumbnail ? contact.photoThumbnail : '../assets/avatar-placeholder.png'">
+  <ion-label class="ion-padding-vertical text-sm text-bold">{{contact.displayName}}</ion-label>
 </div>

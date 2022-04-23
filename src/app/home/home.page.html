@@ -19,9 +19,9 @@
 
 <ion-content [fullscreen]="true">
 
-  <section class="selected-contacts flex ion-justify-content-between">
-    <app-contact-preview *ngFor="let c of cArr"></app-contact-preview>
-  </section>
+<!--  <section class="selected-contacts flex ion-justify-content-between">-->
+<!--    <app-contact-preview *ngFor="let c of allContacts"></app-contact-preview>-->
+<!--  </section>-->
 
   <div class="select-btn ion-text-end">
     <ion-button (click)="onSelect()" [innerText]="selectText" class="ion-no-margin" fill="clear" size="small"></ion-button>
@@ -33,6 +33,6 @@
       <ion-text color="primary" *ngFor="let c of alphabetCharacters">{{c}}</ion-text>
     </section>
 
-    <app-contact-item  *ngFor="let c of cArr"></app-contact-item>
+    <app-contact-item [contact]="contact" *ngFor="let contact of backupContacts"></app-contact-item>
   </ion-list>
 </ion-content>
