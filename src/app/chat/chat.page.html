@@ -1,8 +1,8 @@
 <ion-header class="base-header">
   <ion-toolbar>
     <ion-title class="chat-title">
-      <p>Familia</p>
-      <ion-text class="text-sm" color="medium">Ahmed, hag, Mona, ramy</ion-text>
+      <p>{{chatTitle}}</p>
+      <ion-text class="text-sm" color="medium">{{participantsNames}}</ion-text>
     </ion-title>
     <ion-buttons>
       <ion-back-button text=""></ion-back-button>
@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-  <app-first-chat-messages></app-first-chat-messages>
+  <app-first-chat-messages [chatTitle]="chatTitle"></app-first-chat-messages>
 </ion-content>
 
 <ion-footer>

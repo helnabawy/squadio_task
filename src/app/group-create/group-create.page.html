@@ -1,7 +1,7 @@
-<ion-header collapse="condense" class="base-header">
+<ion-header class="base-header" collapse="condense">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button (click)="navigateToChat()">Create</ion-button>
+      <ion-button (click)="navigateToChat()" [disabled]="remainingNameCharactersCount < 0">Create</ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <ion-text class="text-bold">New Group</ion-text>
@@ -14,27 +14,27 @@
 
 <ion-content>
 
-    <section class="group-name-container">
-      <ion-row>
-        <ion-col size="3">
-          <div class="group-icon ion-align-items-center ion-justify-content-center">
-            <ion-icon name="camera-outline" color="primary"></ion-icon>
-          </div>
-        </ion-col>
-        <ion-col size="9">
-          <div class="group-name-input ion-align-items-center">
-            <ion-input></ion-input>
-            <span class="name-count">18</span>
-          </div>
-          <p>Please provide a group subject and optional group icon</p>
-        </ion-col>
-      </ion-row>
-    </section>
-    <section class="group-participants">
-      <div class="separator">
-        PARTICIPANTS: {{(contactsService.selectedContacts$| async).length}} OF 256
-      </div>
-    </section>
+  <section class="group-name-container">
+    <ion-row>
+      <ion-col size="3">
+        <div class="group-icon ion-align-items-center ion-justify-content-center">
+          <ion-icon color="primary" name="camera-outline"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col size="9">
+        <div class="group-name-input ion-align-items-center">
+          <ion-input [(ngModel)]="groupNameInput"></ion-input>
+          <span class="name-count">{{remainingNameCharactersCount}}</span>
+        </div>
+        <p>Please provide a group subject and optional group icon</p>
+      </ion-col>
+    </ion-row>
+  </section>
+  <section class="group-participants">
+    <div class="separator">
+      PARTICIPANTS: {{(contactsService.selectedContacts$| async).length}} OF 256
+    </div>
+  </section>
 
 
   <section [ngClass]="{'ion-justify-content-between': (contactsService.selectedContacts$| async).length > 4}"
