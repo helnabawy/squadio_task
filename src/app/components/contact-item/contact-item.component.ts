@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from '@capacitor-community/contacts';
+import {IContact} from '../../types/contacts';
+import {ContactsService} from '../../services/contacts.service';
 
 
 @Component({
@@ -9,12 +10,19 @@ import {Contact} from '@capacitor-community/contacts';
 })
 export class ContactItemComponent implements OnInit {
 
-  @Input() contact: Contact;
+  @Input() contact: IContact;
 
-  constructor() {
+  constructor(private contactsService: ContactsService) {
   }
 
   ngOnInit() {
   }
 
+  onChange(event: any) {
+    if (event.detail.checked) {
+      this.contactsService.addContact(this.contact);
+    } else {
+      this.contactsService.removeContact(this.contact);
+    }
+  }
 }

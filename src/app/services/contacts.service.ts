@@ -15,6 +15,7 @@ export class ContactsService {
   }
 
   addContact(contact: Contact) {
+    console.log('add contact, ', contact.contactId);
     const contacts = this.selectedContacts.value;
     contacts.push(contact);
     this.selectedContacts.next(contacts);
@@ -25,5 +26,9 @@ export class ContactsService {
     const index = this.selectedContacts.value.findIndex((v)=> v.contactId === contact.contactId);
     contacts.splice(index, 1);
     this.selectedContacts.next(contacts);
+  }
+
+  removeContacts() {
+    this.selectedContacts.next([]);
   }
 }

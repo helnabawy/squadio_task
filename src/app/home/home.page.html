@@ -6,7 +6,8 @@
     <ion-title class="ion-text-center">
       <ion-text class="text-bold">Add Participants</ion-text>
       <br>
-      <ion-text class="text-sm">{{numberOfSelectedContacts}} / {{maximumNumberOfSelectedContacts}}</ion-text>
+      <ion-text class="text-sm">{{(contactsService.selectedContacts$ | async).length}}
+        / {{maximumNumberOfSelectedContacts}}</ion-text>
     </ion-title>
     <ion-buttons slot="start">
       <ion-button>Cancel</ion-button>
@@ -19,20 +20,23 @@
 
 <ion-content [fullscreen]="true">
 
-<!--  <section class="selected-contacts flex ion-justify-content-between">-->
-<!--    <app-contact-preview *ngFor="let c of allContacts"></app-contact-preview>-->
-<!--  </section>-->
+  <section *ngIf="(contactsService.selectedContacts$ | async).length" [ngClass]="{'ion-justify-content-between': (contactsService.selectedContacts$| async).length > 4}"
+           class="selected-contacts flex ">
+    <app-contact-preview *ngFor="let contact of contactsService.selectedContacts$ | async"
+                         [contact]="contact"></app-contact-preview>
+  </section>
 
   <div class="select-btn ion-text-end">
-    <ion-button (click)="onSelect()" [innerText]="selectText" class="ion-no-margin" fill="clear" size="small"></ion-button>
+    <ion-button (click)="onSelect()" [innerText]="selectText" class="ion-no-margin" fill="clear"
+                size="small"></ion-button>
   </div>
 
   <ion-list class="contacts-list">
 
     <section class="alphabet">
-      <ion-text color="primary" *ngFor="let c of alphabetCharacters">{{c}}</ion-text>
+      <ion-text *ngFor="let c of alphabetCharacters" color="primary">{{c}}</ion-text>
     </section>
 
-    <app-contact-item [contact]="contact" *ngFor="let contact of backupContacts"></app-contact-item>
+    <app-contact-item *ngFor="let contact of backupContacts" [contact]="contact"></app-contact-item>
   </ion-list>
 </ion-content>

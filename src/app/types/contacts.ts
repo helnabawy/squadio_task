@@ -1,20 +1,6 @@
-export interface Contacts {
-  contacts: Contact[];
-}
+import {Contact} from "@capacitor-community/contacts";
 
-export interface Contact {
-  contactId: string;
-  phoneNumbers: PhoneNumber[];
-  displayName: string;
-  emails: Email[];
-}
 
-export interface PhoneNumber {
-  number: string;
-  label: string;
-}
-
-export interface Email {
-  label: string;
-  address: string;
+export interface IContact extends Contact{
+  isSelected: boolean;
 }
