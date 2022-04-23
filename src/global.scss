@@ -27,22 +27,6 @@
 
 
 
-.text-sm {
-  font-size: 12px;
-}
-
-.text-bold {
-  font-weight: bold;
-}
-
-
-ion-button[disabled] {
-  --color: #ccc;
-}
-
-ion-checkbox {
-  --size: 20px
-}
 
 
 ion-header.base-header {
@@ -58,3 +42,32 @@ ion-header.base-header {
     font-weight: bold;
   }
 }
+ion-button[disabled] {
+  --color: #ccc;
+}
+
+ion-checkbox {
+  --size: 20px
+}
+
+.text-sm {
+  font-size: 12px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.selected-contacts {
+  padding: 8px 16px;
+  flex-wrap: wrap;
+}
+
+
+
+

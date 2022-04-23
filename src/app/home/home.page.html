@@ -1,12 +1,12 @@
-<ion-header collapse="condense" class="base-header">
+<ion-header class="base-header" collapse="condense">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button  [disabled]="canSelectAllContacts" (click)="onCreateGroup()">Next</ion-button>
+      <ion-button (click)="onCreateGroup()" [disabled]="canSelectAllContacts">Next</ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <ion-text class="text-bold">Add Participants</ion-text>
       <br>
-      <ion-text class="text-sm">0 / 9</ion-text>
+      <ion-text class="text-sm">{{numberOfSelectedContacts}} / {{maximumNumberOfSelectedContacts}}</ion-text>
     </ion-title>
     <ion-buttons slot="start">
       <ion-button>Cancel</ion-button>
@@ -18,28 +18,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <section class="selected-contacts flex ion-justify-content-between">
+    <app-contact-preview *ngFor="let c of cArr"></app-contact-preview>
+  </section>
+
   <div class="select-btn ion-text-end">
-    <ion-button (click)="onSelect()"
-                [innerText]="selectText"
-                class="ion-no-margin" fill="clear"
-                size="small"></ion-button>
+    <ion-button (click)="onSelect()" [innerText]="selectText" class="ion-no-margin" fill="clear" size="small"></ion-button>
   </div>
 
-  <ion-list>
-    <ion-item lines="inset">
-      <ion-avatar slot="start">
-        <img alt="" src="../assets/avatar-placeholder.png">
-      </ion-avatar>
-      <ion-label class="ion-padding-vertical text-bold">Squadio</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
+  <ion-list class="contacts-list">
 
-    <ion-item lines="inset">
-      <ion-avatar slot="start">
-        <img alt="" src="../assets/avatar-placeholder.png">
-      </ion-avatar>
-      <ion-label class="ion-padding-vertical text-bold">Squadio</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
+    <section class="alphabet">
+      <ion-text color="primary" *ngFor="let c of alphabetCharacters">{{c}}</ion-text>
+    </section>
+
+    <app-contact-item  *ngFor="let c of cArr"></app-contact-item>
   </ion-list>
 </ion-content>

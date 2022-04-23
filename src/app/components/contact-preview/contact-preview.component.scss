@@ -1,0 +1,15 @@
+.contact {
+  position: relative;
+  width: 60px;
+  margin-right: 8px;
+  .remove {
+    position: absolute;
+    right: 0;
+    background-color: #cacaca;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    border: 3px solid #fff;
+  }
+}

@@ -2,3 +2,21 @@
 .select-btn {
   background-color: #f6f6f6;
 }
+
+
+.contacts-list {
+  position: relative;
+  height: 100%;
+  .alphabet {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    z-index: 999;
+    //background: red;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+

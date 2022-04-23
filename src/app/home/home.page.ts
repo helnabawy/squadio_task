@@ -8,14 +8,12 @@ import {Router} from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  numberOfSelectedContacts = 0;
+  numberOfSelectedContacts = 6;
   maximumNumberOfSelectedContacts = 9;
+  alphabetCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
+  cArr = Array(this.numberOfSelectedContacts).fill(0);
 
-  constructor(private router: Router) {}
-
-
-  onSelect() {
-    this.numberOfSelectedContacts = this.numberOfSelectedContacts < 9 ? 9 : 0;
+  constructor(private router: Router) {
   }
 
   get selectText(): string {
@@ -23,7 +21,11 @@ export class HomePage {
   }
 
   get canSelectAllContacts(): boolean {
-    return  this.numberOfSelectedContacts < this.maximumNumberOfSelectedContacts;
+    return this.numberOfSelectedContacts < this.maximumNumberOfSelectedContacts;
+  }
+
+  onSelect() {
+    this.numberOfSelectedContacts = this.numberOfSelectedContacts < 9 ? 9 : 0;
   }
 
   onCreateGroup() {

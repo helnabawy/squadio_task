@@ -1,0 +1,28 @@
+.first-chat-message {
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin: 5px auto;
+    padding: 4px 12px;
+    font-size: 12px;
+    background-color: #eee;
+    border-radius: 8px;
+    max-width: 80vw;
+    text-align: center;
+
+    &.primary {
+      background-color: var(--ion-color-secondary);
+    }
+
+    &.secondary {
+      padding: 2px 12px;
+      background-color: var(--ion-color-secondary-shade);
+    }
+
+    &.warning {
+      padding: 8px 12px;
+      background-color: var(--ion-color-warning);
+    }
+  }
+}
