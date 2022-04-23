@@ -14,7 +14,7 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchTerm" debounce="100"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -37,6 +37,6 @@
       <ion-text *ngFor="let c of alphabetCharacters" color="primary">{{c}}</ion-text>
     </section>
 
-    <app-contact-item *ngFor="let contact of contactsService.allContacts$ | async" [contact]="contact"></app-contact-item>
+    <app-contact-item *ngFor="let contact of (contactsService.allContacts$ | async | filter:searchTerm)" [contact]="contact"></app-contact-item>
   </ion-list>
 </ion-content>

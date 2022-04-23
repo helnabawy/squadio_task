@@ -7,7 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import {ContactPreviewComponent} from '../components/contact-preview/contact-preview.component';
 import {ContactItemComponent} from '../components/contact-item/contact-item.component';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -15,6 +15,7 @@ import {ContactItemComponent} from '../components/contact-item/contact-item.comp
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     ContactPreviewComponent,

@@ -15,6 +15,7 @@ export class HomePage {
   maximumNumberOfSelectedContacts = 9;
   alphabetCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
   canSelectAll = true;
+  searchTerm: string;
 
   backupContacts: IContact[] = [{
     isSelected: false,
