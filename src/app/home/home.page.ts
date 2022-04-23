@@ -14,7 +14,6 @@ export class HomePage {
   numberOfSelectedContacts = 0;
   maximumNumberOfSelectedContacts = 9;
   alphabetCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
-  allContacts: IContact[] = [];
   canSelectAll = true;
 
   backupContacts: IContact[] = [{
@@ -67,12 +66,15 @@ export class HomePage {
 
     // Contacts.getContacts().then(result => {
     //   // console.log(result);
-    //   this.allContacts = result.contacts.map(c => {
+    //   const allContacts = result.contacts.map(c => {
     //     const contact = c as IContact;
     //     contact.isSelected = false;
     //     return contact;
     //   });
+    //     this.contactsService.setAllContacts(allContacts);
     // });
+    this.contactsService.setAllContacts(this.backupContacts);
+
   }
 
   get selectText(): string {

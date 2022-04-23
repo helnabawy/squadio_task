@@ -1,7 +1,7 @@
 <ion-header class="base-header" collapse="condense">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button (click)="onCreateGroup()" [disabled]="canSelectAllContacts">Next</ion-button>
+      <ion-button (click)="onCreateGroup()" [disabled]="(contactsService.selectedContacts$ | async).length < 1">Next</ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <ion-text class="text-bold">Add Participants</ion-text>
@@ -37,6 +37,6 @@
       <ion-text *ngFor="let c of alphabetCharacters" color="primary">{{c}}</ion-text>
     </section>
 
-    <app-contact-item *ngFor="let contact of backupContacts" [contact]="contact"></app-contact-item>
+    <app-contact-item *ngFor="let contact of contactsService.allContacts$ | async" [contact]="contact"></app-contact-item>
   </ion-list>
 </ion-content>

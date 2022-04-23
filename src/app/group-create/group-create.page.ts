@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import {NavController} from "@ionic/angular";
+import {ContactsService} from "../services/contacts.service";
 
 @Component({
   selector: 'app-group-create',
@@ -9,7 +10,8 @@ import {NavController} from "@ionic/angular";
 })
 export class GroupCreatePage implements OnInit {
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController,
+              public contactsService: ContactsService) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 <div class="contact ion-text-center">
-  <div class="remove ion-align-items-center ion-justify-content-center">
+  <div class="remove ion-align-items-center ion-justify-content-center" (click)="onRemove()">
     <ion-icon name="close" color="light"></ion-icon>
   </div>
   <img alt="user avatar" [src]="contact.photoThumbnail ? contact.photoThumbnail : '../assets/avatar-placeholder.png'">

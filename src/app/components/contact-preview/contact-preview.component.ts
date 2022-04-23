@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IContact} from '../../types/contacts';
+import {ContactsService} from '../../services/contacts.service';
 
 @Component({
   selector: 'app-contact-preview',
@@ -8,8 +9,11 @@ import {IContact} from '../../types/contacts';
 })
 export class ContactPreviewComponent implements OnInit {
   @Input() contact: IContact;
-  constructor() { }
+  constructor(private contactsService: ContactsService) { }
 
   ngOnInit() {}
 
+  onRemove() {
+    this.contactsService.removeContact(this.contact);
+  }
 }
