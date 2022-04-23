@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-group-create',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupCreatePage implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
 
+  pop() {
+    this.navController.pop();
+  }
+
+  navigateToChat() {
+    this.navController.navigateForward('/chat');
+  }
 }

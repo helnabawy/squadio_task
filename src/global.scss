@@ -34,3 +34,27 @@
 .text-bold {
   font-weight: bold;
 }
+
+
+ion-button[disabled] {
+  --color: #ccc;
+}
+
+ion-checkbox {
+  --size: 20px
+}
+
+
+ion-header.base-header {
+  border-bottom: 3px solid #eee;
+  ion-toolbar {
+    padding-top: 5px;
+    &:first-of-type {
+      padding-top: 20px;
+    }
+    --background: #f6f6f6;
+  }
+  ion-button {
+    font-weight: bold;
+  }
+}

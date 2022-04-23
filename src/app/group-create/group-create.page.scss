@@ -1,0 +1,41 @@
+.group-name-container {
+  padding: 30px;
+  ion-col {
+    .group-icon {
+      width: 55px;
+      height: 55px;
+      background: #eee;
+      border-radius: 30px;
+      display: flex;
+      ion-icon {
+        font-size: 26px;
+      }
+    }
+    &:last-of-type {
+      .group-name-input {
+        display: flex;
+        border-top: 1px solid #eee;
+
+        border-bottom: 1px solid #eee;
+      }
+
+      p {
+        font-size: 11px;
+        color: #c1c1c1;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+.group-participants {
+  .separator {
+    background-color: #eee;
+    padding: 8px 22px;
+    color: #999;
+    font-size: 12px;
+    font-weight: bold;
+
+  }
+}

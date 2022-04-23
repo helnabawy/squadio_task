@@ -1,32 +1,45 @@
-<ion-header collapse="condense">
-  <ion-toolbar mode="ios">
+<ion-header collapse="condense" class="base-header">
+  <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button disabled="true">Next</ion-button>
+      <ion-button  [disabled]="canSelectAllContacts" (click)="onCreateGroup()">Next</ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      <ion-text class="text-bold" >Add Participants</ion-text>
+      <ion-text class="text-bold">Add Participants</ion-text>
       <br>
-      <ion-text class="text-sm">1 / 9</ion-text>
+      <ion-text class="text-sm">0 / 9</ion-text>
     </ion-title>
     <ion-buttons slot="start">
       <ion-button>Cancel</ion-button>
     </ion-buttons>
-
   </ion-toolbar>
   <ion-toolbar>
-      <ion-searchbar ></ion-searchbar>
+    <ion-searchbar></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="select-btn ion-text-end">
-    <ion-button  fill="clear" size="small" (click)="onSelect()" [innerText]="selectText"></ion-button>
+    <ion-button (click)="onSelect()"
+                [innerText]="selectText"
+                class="ion-no-margin" fill="clear"
+                size="small"></ion-button>
   </div>
 
   <ion-list>
-    <ion-item>
-      <ion-avatar></ion-avatar>
-      <ion-label>Squadio</ion-label>
+    <ion-item lines="inset">
+      <ion-avatar slot="start">
+        <img alt="" src="../assets/avatar-placeholder.png">
+      </ion-avatar>
+      <ion-label class="ion-padding-vertical text-bold">Squadio</ion-label>
+      <ion-checkbox slot="end"></ion-checkbox>
+    </ion-item>
+
+    <ion-item lines="inset">
+      <ion-avatar slot="start">
+        <img alt="" src="../assets/avatar-placeholder.png">
+      </ion-avatar>
+      <ion-label class="ion-padding-vertical text-bold">Squadio</ion-label>
+      <ion-checkbox slot="end"></ion-checkbox>
     </ion-item>
   </ion-list>
 </ion-content>
