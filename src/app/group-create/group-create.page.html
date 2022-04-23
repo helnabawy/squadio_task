@@ -39,7 +39,7 @@
 
   <section [ngClass]="{'ion-justify-content-between': (contactsService.selectedContacts$| async).length > 4}"
            class="selected-contacts flex ">
-    <app-contact-preview *ngFor="let contact of contactsService.selectedContacts$ | async"
+    <app-contact-preview *ngFor="let contact of ((contactsService.selectedContacts$ | async)| unique)"
                          [contact]="contact"></app-contact-preview>
   </section>
 

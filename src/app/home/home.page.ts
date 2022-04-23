@@ -64,16 +64,17 @@ export class HomePage {
 
   constructor(private navController: NavController, public contactsService: ContactsService) {
 
-    // Contacts.getContacts().then(result => {
-    //   // console.log(result);
-    //   const allContacts = result.contacts.map(c => {
-    //     const contact = c as IContact;
-    //     contact.isSelected = false;
-    //     return contact;
-    //   });
-    //     this.contactsService.setAllContacts(allContacts);
-    // });
-    this.contactsService.setAllContacts(this.backupContacts);
+    Contacts.getContacts().then(result => {
+      const allContacts = result.contacts.map(c => {
+        const contact = c as IContact;
+        contact.isSelected = false;
+        return contact;
+      });
+        this.contactsService.setAllContacts(allContacts);
+    });
+
+    // Browser testing
+    // this.contactsService.setAllContacts(this.backupContacts);
 
   }
 
@@ -82,9 +83,7 @@ export class HomePage {
   }
 
   ngOnInit() {
-    this.contactsService.selectedContacts$.subscribe(data => { this.numberOfSelectedContacts = data.length;
-
-    console.log({numberOfSelectedContacts: this.numberOfSelectedContacts})});
+    this.contactsService.selectedContacts$.subscribe(data => this.numberOfSelectedContacts = data.length);
   }
 
   ngOnDestroy() {
@@ -92,18 +91,9 @@ export class HomePage {
   }
 
   onSelect() {
-
-    this.contactsService.removeContacts();
-    this.backupContacts.forEach(c => c.isSelected = false);
+    this.contactsService.removeAllSelectedContacts();
     if (this.canSelectAll) {
-      for (let i  = 0; i< Math.min(this.maximumNumberOfSelectedContacts, this.backupContacts.length); i ++) {
-        console.log(i);
-        const contact = this.backupContacts[i];
-        contact.isSelected = true;
-        if (contact) {
-          this.contactsService.addContact(contact);
-        }
-      }
+      this.contactsService.selectAllContacts(this.maximumNumberOfSelectedContacts);
     }
     this.canSelectAll = !this.canSelectAll;
   }

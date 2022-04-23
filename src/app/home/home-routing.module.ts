@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
+import {UniquePipe} from "../pipes/unique.pipe";
 
 const routes: Routes = [
   {
@@ -10,7 +11,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    declarations: [
+        UniquePipe
+    ],
+    exports: [RouterModule, UniquePipe]
 })
 export class HomePageRoutingModule {}

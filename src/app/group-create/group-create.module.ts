@@ -7,16 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { GroupCreatePageRoutingModule } from './group-create-routing.module';
 
 import { GroupCreatePage } from './group-create.page';
-import {HomePageModule} from "../home/home.module";
+import {HomePageModule} from '../home/home.module';
+import {HomePageRoutingModule} from "../home/home-routing.module";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        GroupCreatePageRoutingModule,
-        HomePageModule
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    GroupCreatePageRoutingModule,
+    HomePageModule,
+    HomePageRoutingModule
+  ],
   declarations: [GroupCreatePage]
 })
 export class GroupCreatePageModule {}

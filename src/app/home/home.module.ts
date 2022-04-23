@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import {ContactPreviewComponent} from "../components/contact-preview/contact-preview.component";
-import {ContactItemComponent} from "../components/contact-item/contact-item.component";
+import {ContactPreviewComponent} from '../components/contact-preview/contact-preview.component';
+import {ContactItemComponent} from '../components/contact-item/contact-item.component';
 
 
 @NgModule({
@@ -14,11 +14,11 @@ import {ContactItemComponent} from "../components/contact-item/contact-item.comp
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
   exports: [
-    ContactPreviewComponent
+    ContactPreviewComponent,
   ],
-  declarations: [HomePage, ContactPreviewComponent, ContactItemComponent]
+    declarations: [HomePage, ContactPreviewComponent, ContactItemComponent]
 })
 export class HomePageModule {}

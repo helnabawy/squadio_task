@@ -20,7 +20,7 @@ export class ContactItemComponent implements OnInit {
 
   onChange(event: any) {
     if (event.detail.checked) {
-      this.contactsService.addContact(this.contact);
+      this.contactsService.addSelectedContact(this.contact);
     } else {
       this.contactsService.removeContact(this.contact);
     }
