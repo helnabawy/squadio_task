@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  selectText = 'Select All';
 
   constructor() {}
 
+
+  onSelect() {
+    console.log(event);
+  }
 }
